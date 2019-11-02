@@ -22,7 +22,7 @@
     "dev": "concurrently --names 'tsc,react' --prefix name 'yarn dev:tsc' 'yarn dev:react'",
     "dev:tsc": "tsc-watch ./src/browser/* --outDir ./dist/browser --onSuccess 'yarn dev:electron'",
     "dev:react": "cross-env BROWSER=none yarn start",
-    "dev:electron": "wait-on http://localhost:3000 && node scripts/start-dev.js"
+    "dev:electron": "wait-on http://localhost:3000 && node --require 'dotenv/config' scripts/start-dev.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +40,8 @@
     ]
   },
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/electron-devtools-installer": "^2.2.0",
     "concurrently": "^5.0.0",
     "cross-env": "^6.0.3",
     "electron-builder": "^22.1.0",
