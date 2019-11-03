@@ -22,7 +22,7 @@ const Routes = (): JSX.Element => {
       <Router history={appHistory}>
         <Switch>
           <Route exact path='/' component={Login} />
-          <PrivateRoute exact path='/users' component={Users} isSignedIn={true} />
+          <PrivateRoute exact path='/users' component={Users} isSignedIn={false} />
         </Switch>
       </Router>
     </>
