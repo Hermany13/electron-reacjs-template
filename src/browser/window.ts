@@ -11,7 +11,10 @@ let mainWindow: Electron.BrowserWindow;
 const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
-    height: 600
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true
+    }
   });
 
   mainWindow.loadURL(
